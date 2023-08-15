@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 
 const InputTodo = ({ addTodoItem }) => {
@@ -29,7 +30,7 @@ const InputTodo = ({ addTodoItem }) => {
           onChange={handleChange}
           placeholder="Add Todo..."
         />
-        <button className="input-submit">Submit</button>
+        <button type="submit" className="input-submit">Submit</button>
       </form>
       <span className="submit-warning">{error}</span>
     </>

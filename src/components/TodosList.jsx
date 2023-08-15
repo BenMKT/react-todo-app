@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable arrow-body-style */
 import TodoItem from './TodoItem';
 
 const TodosList = ({ todosProps, setTodos, delTodo }) => {
