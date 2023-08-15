@@ -1,6 +1,6 @@
-const TodoItem = ({ itemProp, setTodos }) => {
+const TodoItem = ({ itemProp, setTodos, delTodo }) => {
   const handleChange = (id) => {
-    setTodos((prevState) => 
+    setTodos((prevState) =>
       prevState.map((todo) => {
         if (todo.id === id) {
           return {
@@ -9,8 +9,8 @@ const TodoItem = ({ itemProp, setTodos }) => {
           };
         }
         return todo;
-      })  
-    )
+      })
+    );
   };
   return (
     <li>
@@ -19,7 +19,7 @@ const TodoItem = ({ itemProp, setTodos }) => {
         checked={itemProp.completed}
         onChange={() => handleChange(itemProp.id)}
       />
-      <button>Delete</button>
+      <button onClick={() => delTodo(itemProp.id)}>Delete</button>
       {itemProp.title}
     </li>
   );
