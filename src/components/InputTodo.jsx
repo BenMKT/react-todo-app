@@ -7,8 +7,13 @@ const InputTodo = () => {
     setTitle(e.target.value);
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTitle('');
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input type="text" value={title} onChange={handleChange} placeholder="Add Todo..." />
       <button>Submit</button>
     </form>
