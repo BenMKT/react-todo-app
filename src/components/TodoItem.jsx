@@ -1,17 +1,18 @@
-/* eslint-disable react/prop-types */
 import '../styles/todoItem.scss';
 
 const TodoItem = ({ itemProp, setTodos, delTodo }) => {
   const handleChange = (id) => {
-    setTodos((prevState) => prevState.map((todo) => {
-      if (todo.id === id) {
-        return {
-          ...todo,
-          completed: !todo.completed,
-        };
-      }
-      return todo;
-    }));
+    setTodos((prevState) =>
+      prevState.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      })
+    );
   };
 
   const completedStyle = {
@@ -29,7 +30,7 @@ const TodoItem = ({ itemProp, setTodos, delTodo }) => {
           checked={itemProp.completed}
           onChange={() => handleChange(itemProp.id)}
         />
-        <button type="button" onClick={() => delTodo(itemProp.id)}>Delete</button>
+        <button onClick={() => delTodo(itemProp.id)}>Delete</button>
         <span style={itemProp.completed ? completedStyle : null}>
           {itemProp.title}
         </span>
