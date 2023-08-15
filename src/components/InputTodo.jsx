@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+// eslint-disable-next-line react/prop-types
 const InputTodo = ({ addTodoItem }) => {
   const [title, setTitle] = useState('');
   const [error, setError] = useState('');
@@ -29,7 +30,7 @@ const InputTodo = ({ addTodoItem }) => {
           onChange={handleChange}
           placeholder="Add Todo..."
         />
-        <button className="input-submit">Submit</button>
+        <button type="button" className="input-submit">Submit</button>
       </form>
       <span className="submit-warning">{error}</span>
     </>
